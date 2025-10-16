@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
-        env_file_encoding = 'utf-8'
+        env_file_encoding = "utf-8"
 
     @property
     def DATABASE_URL(self) -> str:
@@ -27,4 +27,6 @@ class Settings(BaseSettings):
             f"{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
         )
 
+# Instancia única para toda la app
 settings = Settings()
+
